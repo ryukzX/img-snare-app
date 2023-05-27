@@ -1,8 +1,14 @@
 <script setup>
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faMoon,
+  faSun,
+  faUser,
+  faUpload,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBars, faMoon, faSun);
+library.add(faBars, faMoon, faSun, faUser, faUpload);
 
 import { useDark, useToggle } from "@vueuse/core";
 
@@ -25,6 +31,16 @@ const toggleMenu = ref(false);
           <fa icon="fa-bars" />
         </button>
       </div>
+      <div class="upload-button">
+        <a href="/user/upload">
+          <fa icon="fa-upload" />
+        </a>
+      </div>
+      <div class="profile-button">
+        <a href="/user/profile">
+          <fa icon="fa-user" />
+        </a>
+      </div>
       <div class="theme-button">
         <button @click="toggleDark()">
           <fa v-if="isDark" icon="fa-sun" />
@@ -32,7 +48,13 @@ const toggleMenu = ref(false);
         </button>
       </div>
       <div class="menu-content" v-show="toggleMenu">
+        <p style="font-weight: bold; font-size: medium; margin-bottom: 5px;">Menu</p>
         <a href="/home">Home</a>
+        <a href="/user/upload">Upload</a>
+        <a href="/about">About</a>
+        <a href="/tos">Terms of Service</a>
+        <a href="/privacy">Privacy</a> <br />
+        <p style="font-weight: bold; font-size: medium; margin-bottom: 5px">Profile</p>
         <a href="/auth/login">Login</a>
         <a href="/auth/signup">Signup</a>
       </div>
@@ -51,7 +73,7 @@ const toggleMenu = ref(false);
   margin-bottom: 20px;
   padding: 0 20px;
   align-items: center;
-  grid-template-areas: "logo theme-button menu-button";
+  grid-template-areas: "logo theme-button upload-button profile-button menu-button";
   grid-template-columns: repeat(2, 1fr);
   column-gap: 15px;
   box-shadow: 0 0 3px var(--shadow-color);
@@ -75,7 +97,7 @@ const toggleMenu = ref(false);
   z-index: 1;
   width: 100%;
   padding: 15px 15px;
-  margin-top: 177px;
+  margin-top: 350px;
   background: var(--bg-color);
   box-shadow: 0 0 3px var(--shadow-color);
 }
@@ -83,6 +105,18 @@ const toggleMenu = ref(false);
 #navbar > .menu-content > a {
   padding: 5px;
   display: block;
+}
+
+#navbar > .upload-button {
+  grid-area: upload-button;
+  justify-self: end;
+  font-size: 24px;
+}
+
+#navbar > .profile-button {
+  grid-area: profile-button;
+  justify-self: end;
+  font-size: 24px;
 }
 
 #navbar > .theme-button {
