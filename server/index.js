@@ -10,17 +10,17 @@ const distPath = path.join(path.resolve(), "dist");
 
 const app = express();
 
-app.get("/api/v1/server", (_req, res) => {
+app.get("/api/server", (_req, res) => {
   res.json({ message: "Online" });
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.get("/api/v1/web", (_req, res) => {
-    res.json({ message: "Production" });
+  app.get("/api/web", (_req, res) => {
+    res.json({ message: "BETA" });
   });
 } else {
-  app.get("/api/v1/web", (_req, res) => {
-    res.json({ message: "Development" });
+  app.get("/api/web", (_req, res) => {
+    res.json({ message: "Under construction" });
   });
 }
 

@@ -19,10 +19,14 @@ body {
   background: var(--bg-color);
   font-family: "Lato", sans-serif;
   font-size: 14px;
+  height: 100vh;
+  margin: auto;
 }
 
 main {
-  margin: auto;
   padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

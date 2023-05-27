@@ -26,11 +26,6 @@ const toggleMenu = ref(false);
       <div class="logo">
         <a href="/">ImgSnare</a>
       </div>
-      <div class="menu-button">
-        <button @click="toggleMenu = !toggleMenu">
-          <fa icon="fa-bars" />
-        </button>
-      </div>
       <div class="upload-button">
         <a href="/user/upload">
           <fa icon="fa-upload" />
@@ -47,16 +42,25 @@ const toggleMenu = ref(false);
           <fa v-else icon="fa-moon" />
         </button>
       </div>
+      <div class="menu-button">
+        <button @click="toggleMenu = !toggleMenu">
+          <fa icon="fa-bars" />
+        </button>
+      </div>
       <div class="menu-content" v-show="toggleMenu">
-        <p style="font-weight: bold; font-size: medium; margin-bottom: 5px;">Menu</p>
-        <a href="/home">Home</a>
-        <a href="/user/upload">Upload</a>
-        <a href="/about">About</a>
-        <a href="/tos">Terms of Service</a>
-        <a href="/privacy">Privacy</a> <br />
-        <p style="font-weight: bold; font-size: medium; margin-bottom: 5px">Profile</p>
-        <a href="/auth/login">Login</a>
-        <a href="/auth/signup">Signup</a>
+        <p style="font-weight: bold; font-size: medium; margin-bottom: 5px">
+          Menu
+        </p>
+        <a class="menu-link" href="/home">Home</a>
+        <a class="menu-link" href="/user/upload">Upload</a>
+        <a class="menu-link" href="/about">About</a>
+        <a class="menu-link" href="/tos">Terms of Service</a>
+        <a class="menu-link" href="/privacy">Privacy</a> <br />
+        <p style="font-weight: bold; font-size: medium; margin-bottom: 5px">
+          Profile
+        </p>
+        <a class="menu-link" href="/auth/login">Login</a>
+        <a class="menu-link" href="/auth/signup">Signup</a>
       </div>
     </nav>
   </header>
@@ -67,61 +71,43 @@ const toggleMenu = ref(false);
 
 #navbar {
   position: relative;
-  display: grid;
-  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
   height: 48px;
   margin-bottom: 20px;
   padding: 0 20px;
-  align-items: center;
-  grid-template-areas: "logo theme-button upload-button profile-button menu-button";
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 15px;
   box-shadow: 0 0 3px var(--shadow-color);
 }
 
-#navbar > .logo {
-  grid-area: logo;
+.logo {
   font-family: "Itim", cursive;
   font-size: 32px;
   letter-spacing: -2px;
+  margin-right: auto;
 }
 
-#navbar > .menu-button {
-  grid-area: menu-button;
-  justify-self: end;
+.menu-button,
+.upload-button,
+.profile-button,
+.theme-button {
   font-size: 24px;
 }
 
-#navbar > .menu-content {
+.menu-content {
   position: absolute;
   z-index: 1;
   width: 100%;
-  padding: 15px 15px;
-  margin-top: 350px;
+  padding: 15px 20px;
+  top: 140%;
+  right: 0;
   background: var(--bg-color);
   box-shadow: 0 0 3px var(--shadow-color);
 }
 
-#navbar > .menu-content > a {
+.menu-link {
   padding: 5px;
   display: block;
-}
-
-#navbar > .upload-button {
-  grid-area: upload-button;
-  justify-self: end;
-  font-size: 24px;
-}
-
-#navbar > .profile-button {
-  grid-area: profile-button;
-  justify-self: end;
-  font-size: 24px;
-}
-
-#navbar > .theme-button {
-  grid-area: theme-button;
-  justify-self: end;
-  font-size: 24px;
 }
 </style>

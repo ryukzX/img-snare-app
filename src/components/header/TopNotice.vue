@@ -9,13 +9,13 @@ import { ref } from "vue";
 const apiStatus = ref({});
 const webStage = ref({});
 
-fetch(`/api/v1/server`)
+fetch(`/api/server`)
   .then((r) => r.json())
   .then(({ message }) => {
     apiStatus.value = message;
   });
 
-fetch(`/api/v1/web`)
+fetch(`/api/web`)
   .then((r) => r.json())
   .then(({ message }) => {
     webStage.value = message;
@@ -37,30 +37,27 @@ fetch(`/api/v1/web`)
 
 <style scope>
 #notice {
-  display: grid;
-  width: 100%;
-  height: 24px;
-  margin-bottom: 9px;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  text-align: center;
-  grid-template-areas: "notice stage";
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 15px;
+  height: 24px;
+  margin-bottom: 20px;
   box-shadow: 0 0 3px var(--shadow-color);
 }
 
-#notice > .api-status,
+.api-status,
 .web-stage {
-  grid-area: notice stage;
   font-size: 12px;
   font-weight: 700;
 }
 
 .status {
   color: #22c55e;
+  margin-left: 3px
 }
 
 .stage {
   color: #3b82f6;
+  margin-left: 3px
 }
 </style>
