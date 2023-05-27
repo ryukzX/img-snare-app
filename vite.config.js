@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -7,7 +7,15 @@ export default defineConfig({
   build: {
     manifest: true,
     rollupOptions: {
-      input: './src/main.js',
-    }
-  }
-})
+      input: "./src/main.js",
+      output: {
+        manualChunks: {
+          "group-auth": [
+            "./src/pages/auth/login/LoginPage.vue",
+            "./src/pages/auth/signup/SignupPage.vue",
+          ],
+        },
+      },
+    },
+  },
+});

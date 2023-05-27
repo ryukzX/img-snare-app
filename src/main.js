@@ -1,12 +1,12 @@
-import 'vite/modulepreload-polyfill'
-import { createApp } from 'vue'
+import "vite/modulepreload-polyfill";
+import { createApp } from "vue";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-import './assets/css/_reset.scss'
-import './assets/css/_theme.scss'
+import "./assets/css/_reset.scss";
+import "./assets/css/_theme.scss";
 
-createApp(App).use(router).component('fa', FontAwesomeIcon).mount('#app')
+createApp(App).use(router).component("fa", FontAwesomeIcon).mount("#app");

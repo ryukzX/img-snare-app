@@ -1,17 +1,17 @@
 <script setup>
-import { library } from '@fortawesome/fontawesome-svg-core' 
-import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons' 
-  
-library.add(faBars, faMoon, faSun)
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
-import { useDark, useToggle } from '@vueuse/core' 
-  
-const isDark = useDark({}) 
-const toggleDark = useToggle(isDark)
+library.add(faBars, faMoon, faSun);
 
-import { ref } from 'vue'
+import { useDark, useToggle } from "@vueuse/core";
 
-const toggleMenu = ref(false)
+const isDark = useDark({});
+const toggleDark = useToggle(isDark);
+
+import { ref } from "vue";
+
+const toggleMenu = ref(false);
 </script>
 
 <template>
@@ -20,18 +20,19 @@ const toggleMenu = ref(false)
       <div class="logo">
         <a href="/">ImgSnare</a>
       </div>
-      <div class="menu-button"> 
-        <button @click="toggleMenu = !toggleMenu"> 
-          <fa icon="fa-bars" /> 
+      <div class="menu-button">
+        <button @click="toggleMenu = !toggleMenu">
+          <fa icon="fa-bars" />
         </button>
       </div>
-      <div class="theme-button"> 
-        <button @click="toggleDark()"> 
-          <fa v-if="isDark" icon="fa-sun" /> 
-          <fa v-else icon="fa-moon" /> 
-        </button> 
+      <div class="theme-button">
+        <button @click="toggleDark()">
+          <fa v-if="isDark" icon="fa-sun" />
+          <fa v-else icon="fa-moon" />
+        </button>
       </div>
       <div class="menu-content" v-show="toggleMenu">
+        <a href="/home">Home</a>
         <a href="/auth/login">Login</a>
         <a href="/auth/signup">Signup</a>
       </div>
@@ -40,7 +41,7 @@ const toggleMenu = ref(false)
 </template>
 
 <style scope>
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 
 #navbar {
   position: relative;
@@ -50,8 +51,7 @@ const toggleMenu = ref(false)
   margin-bottom: 20px;
   padding: 0 20px;
   align-items: center;
-  grid-template-areas:
-    'logo theme-button menu-button';
+  grid-template-areas: "logo theme-button menu-button";
   grid-template-columns: repeat(2, 1fr);
   column-gap: 15px;
   box-shadow: 0 0 3px var(--shadow-color);
@@ -59,7 +59,7 @@ const toggleMenu = ref(false)
 
 #navbar > .logo {
   grid-area: logo;
-  font-family: 'Itim', cursive;
+  font-family: "Itim", cursive;
   font-size: 32px;
   letter-spacing: -2px;
 }
@@ -75,7 +75,7 @@ const toggleMenu = ref(false)
   z-index: 1;
   width: 100%;
   padding: 15px 15px;
-  margin-top: 150px;
+  margin-top: 177px;
   background: var(--bg-color);
   box-shadow: 0 0 3px var(--shadow-color);
 }
