@@ -1,0 +1,34 @@
+// Colors
+$globalWhite: #f1f5f9;
+$globalDark: #1e293b;
+
+$shadowWhite: #cbd5e1;
+$shadowDark: #334155;
+
+$lightTheme: (
+  --text-color: $globalDark,
+  --bg-color: $globalWhite,
+
+  --shadow-color: $shadowWhite,
+);
+
+$darkTheme: (
+  --text-color: $globalWhite,
+  --bg-color: $globalDark,
+
+  --shadow-color: $shadowDark,
+);
+
+@mixin spread-map($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}
+
+:root {
+  @include spread-map($lightTheme);
+  &.dark {
+    @include spread-map($darkTheme);
+  }
+}
+
