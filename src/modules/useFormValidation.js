@@ -1,4 +1,4 @@
-import useValidators from "./Validators";
+import useValidators from "@modules/Validators";
 import { reactive } from "@vue/reactivity";
 
 const errors = reactive({});
@@ -6,10 +6,10 @@ const errors = reactive({});
 export default function useFormValidation() {
   const { isEmpty, minLength, isEmail } = useValidators();
 
-  const validateUsernameField = (fieldUsername, fieldValue) => {
-    errors[fieldUsername] = !fieldValue
-      ? isEmpty(fieldUsername, fieldValue)
-      : minLength(fieldUsername, fieldValue, 4);
+  const validateNameField = (fieldName, fieldValue) => {
+    errors[fieldName] = !fieldValue
+      ? isEmpty(fieldName, fieldValue)
+      : minLength(fieldName, fieldValue, 4);
   };
 
   const validateEmailField = (fieldName, fieldValue) => {
@@ -26,7 +26,7 @@ export default function useFormValidation() {
 
   return {
     errors,
-    validateUsernameField,
+    validateNameField,
     validateEmailField,
     validatePasswordField,
   };

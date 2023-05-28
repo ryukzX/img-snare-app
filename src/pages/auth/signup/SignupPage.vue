@@ -1,28 +1,31 @@
 <script>
-import UsernameField from "../../../components/form/UsernameField.vue";
-import EmailField from "../../../components/form/EmailField.vue";
-import PasswordField from "../../../components/form/PasswordField.vue";
+import { reactive } from "vue";
+import NameField from "@components/form/NameField.vue";
+import EmailField from "@components/form/EmailField.vue";
+import PasswordField from "@components/form/PasswordField.vue";
 
-import useFormValidation from "../../../modules/useFormValidation";
-import useSubmitButtonState from "../../../modules/useSubmitButtonState";
+import useFormValidation from "@modules/useFormValidation";
+import useSubmitButtonState from "@modules/useSubmitButtonState";
 
 export default {
   components: {
-    UsernameField,
+    NameField,
     EmailField,
     PasswordField,
   },
   setup() {
     let user = reactive({
-      username: "",
+      name: "",
       email: "",
       password: "",
     });
 
-    const { errors } = useFormValidation();
-    const { isSignupButtonDisabled } = useSubmitButtonState(user, errors);
-
-    return { user, isSignupButtonDisabled };
+    const { error } = useFormValidation();
+    const { isSignupButtonDisabled } = useSubmitButtonState(user, error);
+    const signUpButtonPressed = () => {
+      console.log(user);
+    };
+    return { user, isSignupButtonDisabled, signUpButtonPressed };
   },
 };
 </script>
@@ -30,8 +33,8 @@ export default {
 <template>
   <section id="signup-form">
     <h1>Signup Page</h1>
-    <form @submit.prevent novalidate class="form">
-      <UsernameField v-model="user.username" />
+    <form @submit.prevent class="form">
+      <NameField v-model="user.name" />
       <EmailField v-model="user.email" />
       <PasswordField v-model="user.password" />
       <button :disabled="isSignupButtonDisabled" @click="signUpButtonPressed">

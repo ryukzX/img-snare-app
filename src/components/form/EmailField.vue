@@ -5,14 +5,12 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 library.add(faEnvelope);
 
 import { ref } from "vue";
-import useFormValidation from "../../modules/useFormValidation";
+import useFormValidation from "@modules/useFormValidation";
 
 export default {
   setup() {
     let input = ref("");
-
     const { validateEmailField, errors } = useFormValidation();
-
     const validateInput = () => {
       validateEmailField("email", input.value);
     };

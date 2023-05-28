@@ -5,16 +5,14 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 library.add(faUser);
 
 import { ref } from "vue";
-import useFormValidation from "../../modules/useFormValidation";
+import useFormValidation from "@modules/useFormValidation";
 
 export default {
   setup() {
     let input = ref("");
-
-    const { validateUsernameField, errors } = useFormValidation();
-
+    const { validateNameField, errors } = useFormValidation();
     const validateInput = () => {
-      validateUsernameField("username", input.value);
+      validateNameField("name", input.value);
     };
     return { input, errors, validateInput };
   },
@@ -22,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div id="username-field">
+  <div id="name-field">
     <div class="field">
       <fa icon="fa-user"></fa>
       <input
@@ -35,8 +33,8 @@ export default {
         @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
-    <div v-if="errors.username">
-      {{ errors.username }}
+    <div v-if="errors.name">
+      {{ errors.name }}
     </div>
   </div>
 </template>

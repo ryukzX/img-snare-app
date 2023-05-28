@@ -5,14 +5,12 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 library.add(faLock);
 
 import { ref } from "vue";
-import useFormValidation from "../../modules/useFormValidation";
+import useFormValidation from "@modules/useFormValidation";
 
 export default {
   setup() {
     let input = ref("");
-
     const { validatePasswordField, errors } = useFormValidation();
-
     const validateInput = () => {
       validatePasswordField("password", input.value);
     };

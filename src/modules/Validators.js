@@ -1,11 +1,11 @@
 export default function useValidators() {
-  const isEmpty = (fieldUsername, fieldValue) => {
-    return !fieldValue ? "The " + fieldUsername + " field is required" : "";
+  const isEmpty = (fieldName, fieldValue) => {
+    return !fieldValue ? "The " + fieldName + " field is required" : "";
   };
 
-  const minLength = (fieldUsername, fieldValue, min) => {
+  const minLength = (fieldName, fieldValue, min) => {
     return fieldValue.length < min
-      ? `The ${fieldUsername} field must be at least ${min} characters long`
+      ? `The ${fieldName} field must be at least ${min} characters long`
       : "";
   };
 
