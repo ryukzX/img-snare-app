@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div class="password-field">
+  <div id="password-field">
     <div class="field">
       <fa icon="fa-lock"></fa>
       <input

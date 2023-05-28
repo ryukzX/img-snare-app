@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div class="email-field">
+  <div id="email-field">
     <div class="field">
       <fa icon="fa-envelope"></fa>
       <input
