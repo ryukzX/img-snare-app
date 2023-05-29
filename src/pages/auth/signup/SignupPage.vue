@@ -20,8 +20,8 @@ export default {
       password: "",
     });
 
-    const { error } = useFormValidation();
-    const { isSignupButtonDisabled } = useSubmitButtonState(user, error);
+    const { errors } = useFormValidation();
+    const { isSignupButtonDisabled } = useSubmitButtonState(user, errors);
 
     const signUpButtonPressed = () => {
       console.log(user);

@@ -1,8 +1,8 @@
 import express from "express";
 import path from "path";
 
-import assetsRouter from "./assetsRouter.js";
-import mainRouter from "./mainRouter.js";
+import assetsRouter from "./routes/assetsRouter.js";
+import mainRouter from "./routes/mainRouter.js";
 
 const port = process.env.PORT || 3000;
 const publicPath = path.join(path.resolve(), "public");

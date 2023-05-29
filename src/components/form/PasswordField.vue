@@ -12,7 +12,7 @@ export default {
     let input = ref("");
     const { validatePasswordField, errors } = useFormValidation();
     const validateInput = () => {
-      validatePasswordField("password", input.value);
+      validatePasswordField("Password", input.value);
     };
     return { input, errors, validateInput };
   },
@@ -25,7 +25,6 @@ export default {
       <fa icon="fa-lock"></fa>
       <input
         type="password"
-        name="password"
         placeholder="Password"
         autocomplete="off"
         v-model="input"
@@ -34,8 +33,8 @@ export default {
         @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
-    <div v-if="errors.password">
-      {{ errors.password }}
+    <div v-if="errors.Password">
+      {{ errors.Password }}
     </div>
   </div>
 </template>

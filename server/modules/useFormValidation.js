@@ -21,7 +21,7 @@ export default function useFormValidation() {
   const validatePasswordField = (fieldName, fieldValue) => {
     errors[fieldName] = !fieldValue
       ? isEmpty(fieldName, fieldValue)
-      : minLength(fieldName, fieldValue, 8);
+      : minLength(fieldName, fieldValue, 6);
   };
 
   return {

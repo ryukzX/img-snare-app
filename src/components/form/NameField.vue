@@ -12,7 +12,7 @@ export default {
     let input = ref("");
     const { validateNameField, errors } = useFormValidation();
     const validateInput = () => {
-      validateNameField("name", input.value);
+      validateNameField("Username", input.value);
     };
     return { input, errors, validateInput };
   },
@@ -25,7 +25,6 @@ export default {
       <fa icon="fa-user"></fa>
       <input
         type="text"
-        name="name"
         placeholder="Username"
         autocomplete="off"
         v-model="input"
@@ -34,8 +33,8 @@ export default {
         @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
-    <div v-if="errors.name">
-      {{ errors.name }}
+    <div v-if="errors.Username">
+      {{ errors.Username }}
     </div>
   </div>
 </template>
