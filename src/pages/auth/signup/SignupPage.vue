@@ -22,10 +22,16 @@ export default {
 
     const { error } = useFormValidation();
     const { isSignupButtonDisabled } = useSubmitButtonState(user, error);
+
     const signUpButtonPressed = () => {
       console.log(user);
     };
-    return { user, isSignupButtonDisabled, signUpButtonPressed };
+
+    return {
+      user,
+      isSignupButtonDisabled,
+      signUpButtonPressed,
+    };
   },
 };
 </script>

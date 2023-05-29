@@ -25,6 +25,7 @@ export default {
       <fa icon="fa-lock"></fa>
       <input
         type="password"
+        name="password"
         placeholder="Password"
         autocomplete="off"
         v-model="input"

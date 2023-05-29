@@ -23,7 +23,7 @@ export default defineConfig({
       },
       {
         find: "@modules",
-        replacement: fileURLToPath(new URL("./src/modules/", import.meta.url)),
+        replacement: fileURLToPath(new URL("./server/modules/", import.meta.url)),
       },
       {
         find: "@pages",

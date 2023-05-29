@@ -25,6 +25,7 @@ export default {
       <fa icon="fa-user"></fa>
       <input
         type="text"
+        name="name"
         placeholder="Username"
         autocomplete="off"
         v-model="input"

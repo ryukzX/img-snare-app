@@ -4,7 +4,7 @@ export default function useSubmitButtonState(user, errors) {
   const isSignupButtonDisabled = computed(() => {
     let disabled = true;
     for (let prop in user) {
-      if (!user[prop] || errors[prop]) {
+      if (!user[prop] || errors) {
         disabled = true;
         break;
       }

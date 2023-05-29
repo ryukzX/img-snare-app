@@ -25,6 +25,7 @@ export default {
       <fa icon="fa-envelope"></fa>
       <input
         type="email"
+        name="email"
         placeholder="Email"
         autocomplete="off"
         v-model="input"
