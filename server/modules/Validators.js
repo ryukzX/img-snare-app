@@ -3,7 +3,7 @@ export default function useValidators() {
     return !fieldValue ? fieldName + " field is required" : "";
   };
 
-  const minLength = (fieldName, fieldValue, min) => {
+  const minLength = (fieldName, fieldValue, min, max) => {
     return fieldValue.length < min
       ? `${fieldName} field must be at least ${min} chars long`
       : "";

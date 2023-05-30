@@ -35,11 +35,15 @@ export default {
 
 <template>
   <section id="login-form">
-    <h1>Login Page</h1>
+    <h1>Login</h1>
     <form @submit.prevent class="form">
       <EmailField v-model="user.email" />
       <PasswordField v-model="user.password" />
-      <button :disabled="isSignupButtonDisabled" @click="loginButtonPressed">
+      <button
+        class="button-primary"
+        :disabled="isSignupButtonDisabled"
+        @click="loginButtonPressed"
+      >
         Login
       </button>
     </form>
@@ -47,13 +51,28 @@ export default {
 </template>
 
 <style scoped>
-#login-form {
+#login-form,
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .form {
-  width: 450px;
+  width: 360px;
+  padding: 20px;
+  box-shadow: 0 0 3px var(--shadow-color);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.button-primary {
+  color: var(--bg-color);
+  background: var(--text-color);
+  margin-top: 15px;
+  padding: 5px 10px;
 }
 </style>

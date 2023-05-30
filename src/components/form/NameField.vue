@@ -22,7 +22,7 @@ export default {
 <template>
   <div id="name-field">
     <div class="field">
-      <fa icon="fa-user"></fa>
+      <fa icon="fa-user" style="margin-right: 5px"></fa>
       <input
         type="text"
         placeholder="Username"
@@ -38,3 +38,9 @@ export default {
     </div>
   </div>
 </template>
+
+<style scope>
+#name-field input {
+  padding: 10px 0;
+}
+</style>

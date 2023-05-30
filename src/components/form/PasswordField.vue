@@ -22,7 +22,7 @@ export default {
 <template>
   <div id="password-field">
     <div class="field">
-      <fa icon="fa-lock"></fa>
+      <fa icon="fa-lock" style="margin-right: 5px"></fa>
       <input
         type="password"
         placeholder="Password"
@@ -38,3 +38,9 @@ export default {
     </div>
   </div>
 </template>
+
+<style scope>
+#password-field input {
+  padding: 10px 0;
+}
+</style>

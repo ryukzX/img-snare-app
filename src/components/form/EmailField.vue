@@ -22,7 +22,7 @@ export default {
 <template>
   <div id="email-field">
     <div class="field">
-      <fa icon="fa-envelope"></fa>
+      <fa icon="fa-envelope" style="margin-right: 5px"></fa>
       <input
         type="email"
         placeholder="Email"
@@ -38,3 +38,9 @@ export default {
     </div>
   </div>
 </template>
+
+<style scope>
+#email-field input {
+  padding: 10px 0;
+}
+</style>
