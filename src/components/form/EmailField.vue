@@ -33,7 +33,7 @@ export default {
         @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
-    <div v-if="errors.Email">
+    <div class="error" v-if="errors.Email">
       {{ errors.Email }}
     </div>
   </div>
@@ -42,5 +42,9 @@ export default {
 <style scope>
 #email-field input {
   padding: 10px 0;
+}
+
+.error {
+  font-size: 12px;
 }
 </style>
