@@ -41,7 +41,13 @@ export default {
 
 <style scope>
 #email-field input {
-  padding: 10px 0;
+  padding: 5px 0;
+  margin: 10px 0;
+  box-shadow: 0 0 3px var(--shadow-color);
+}
+
+#email-field input::placeholder {
+  padding-left: 5px;
 }
 
 .error {
