@@ -1,6 +1,9 @@
 {
   "name": "img-snare-app",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "description": "Upload and share images online",
+  "author": "ryukzX (mqstmr@gmail.com)",
+  "private": true,
   "type": "module",
   "main": "server/index.js",
   "scripts": {
@@ -10,6 +13,10 @@
     "start": "NODE_ENV=production node server/index.js",
     "build": "vite build",
     "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryukzX/img-snare-app.git"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
