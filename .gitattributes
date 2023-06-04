@@ -1,3 +1,5 @@
-*.js    eol=lf
-*.jsx   eol=lf
-*.json  eol=lf
+* text=auto
+
+*.js    text
+*.jsx   text
+*.json  text
