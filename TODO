@@ -1,58 +1,34 @@
-**_ ################################################# _**
-####### **_ Pages _** #######
-
+**_ Pages _**
 ## \*\* configure welcome page
-
 ## \*\* configure home page
-
 ## \*\* configure upload page
-
 ## \*\* configure about page
-
 ## \*\* configure tos page
-
 ## \*\* configure privacy page
-
 ## \*\* configure 404 page
-
 --
-
 ## \*\* configure user pages (after authentication is done)
-
 **_ ################################################# _**
-####### **_ User _** #######
 
+**_ User _**
 ## \*\* configure max length to form
-
 ## \*\* correct signup/login form size
-
 ## \*\* add user authentication signup/login + mongoDb
-
 **_ ################################################# _**
-####### **_ Reusable _** #######
 
+**_ Reusable _**
 ## \*\* configure fontawesome to work in one file (ex: add-ons folder)
-
 **_ ################################################# _**
-####### **_ Css _** #######
 
+**_ Css _**
 ## \*\* Configure css theme colors
-
 ## \*\* css buttons
-
 **_ ################################################# _**
-####### **_ Etc _** #######
 
+**_ Etc _**
 ## \*\* clean up scss
-
 ## \*\* clean up server folder
-
 ## \*\* clean up src folder
-
 --
-
 ## \*\* add eslint + prettier
-
 ## \*\* add store
-
-**_ ################################################# _**
