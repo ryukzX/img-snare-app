@@ -7,7 +7,7 @@ library.add(faLock);
 import { ref } from "vue";
 import useFormValidation from "@modules/useFormValidation";
 
-export default {
+export default (await import("vue")).defineComponent({
   setup() {
     let input = ref("");
     const { validatePasswordField, errors } = useFormValidation();
@@ -16,7 +16,7 @@ export default {
     };
     return { input, errors, validateInput };
   },
-};
+});
 </script>
 
 <template>
