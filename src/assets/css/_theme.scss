@@ -1,9 +1,16 @@
-$globalWhite: #f1f5f9;
-$globalDark: #1e293b;
+/*! Basic theme template
+* TODO: Make theme configurations when ready for production
+*/
 
-$shadowWhite: #cbd5e1;
-$shadowDark: #334155;
+/*! Global text colors */
+$globalWhite: #eeeeee;
+$globalDark: #222222;
 
+/*! Shadow colors */
+$shadowWhite: #bbbbbb;
+$shadowDark: #333333;
+
+/*! Light theme */
 $lightTheme: (
   --text-color: $globalDark,
   --bg-color: $globalWhite,
@@ -11,6 +18,7 @@ $lightTheme: (
   --shadow-color: $shadowWhite,
 );
 
+/*! Dark theme */
 $darkTheme: (
   --text-color: $globalWhite,
   --bg-color: $globalDark,
@@ -18,14 +26,17 @@ $darkTheme: (
   --shadow-color: $shadowDark,
 );
 
+/*! Mixins */
 @mixin spread-map($map: ()) {
   @each $key, $value in $map {
     #{$key}: $value;
   }
 }
 
+/*! Changed themes */
 :root {
   @include spread-map($lightTheme);
+
   &.dark {
     @include spread-map($darkTheme);
   }

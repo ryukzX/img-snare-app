@@ -34,6 +34,7 @@ textarea {
   white-space: revert;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
