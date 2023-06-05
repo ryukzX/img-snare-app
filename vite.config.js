@@ -32,6 +32,7 @@ export default defineConfig({
     ],
   },
   build: {
+    target: 'esnext',
     manifest: true,
     rollupOptions: {
       input: "./src/main.js",
