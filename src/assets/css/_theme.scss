@@ -36,7 +36,6 @@ $darkTheme: (
 /*! Changed themes */
 :root {
   @include spread-map($lightTheme);
-
   &.dark {
     @include spread-map($darkTheme);
   }
