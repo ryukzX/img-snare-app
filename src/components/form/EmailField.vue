@@ -22,7 +22,7 @@ export default (await import("vue")).defineComponent({
 <template>
   <div id="email-field">
     <div class="field">
-      <fa icon="fa-envelope" style="margin-right: 5px"></fa>
+      <fa icon="fa-envelope" style="margin-right: 10px"></fa>
       <input
         type="email"
         placeholder="Email"

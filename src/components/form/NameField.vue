@@ -22,7 +22,7 @@ export default (await import("vue")).defineComponent({
 <template>
   <div id="name-field">
     <div class="field">
-      <fa icon="fa-user" style="margin-right: 5px"></fa>
+      <fa icon="fa-user" style="margin-right: 10px"></fa>
       <input
         type="text"
         placeholder="Username"

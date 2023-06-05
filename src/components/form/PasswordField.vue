@@ -22,7 +22,7 @@ export default (await import("vue")).defineComponent({
 <template>
   <div id="password-field">
     <div class="field">
-      <fa icon="fa-lock" style="margin-right: 5px"></fa>
+      <fa icon="fa-lock" style="margin-right: 10px"></fa>
       <input
         type="password"
         placeholder="Password"
