@@ -44,6 +44,7 @@ export default (await import("vue")).defineComponent({
   padding: 5px 0;
   margin: 10px 0;
   text-indent: 10px;
+  width: 250px;
   box-shadow: 0 0 3px var(--shadow-color);
 }
 
