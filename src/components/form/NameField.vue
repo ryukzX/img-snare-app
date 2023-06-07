@@ -43,14 +43,11 @@ export default (await import("vue")).defineComponent({
 #name-field input {
   padding: 5px 0;
   margin: 10px 0;
+  text-indent: 10px;
   box-shadow: 0 0 3px var(--shadow-color);
 }
 
-#name-field input::placeholder {
-  padding-left: 5px;
-}
-
 .error {
-  font-size: 12px;
+  font-size: 10px;
 }
 </style>
