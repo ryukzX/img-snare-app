@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from "vue";
+import { useDark, useToggle } from "@vueuse/core";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBars,
@@ -10,13 +12,8 @@ import {
 
 library.add(faBars, faMoon, faSun, faUser, faUpload);
 
-import { useDark, useToggle } from "@vueuse/core";
-
 const isDark = useDark({});
 const toggleDark = useToggle(isDark);
-
-import { ref } from "vue";
-
 const toggleMenu = ref(false);
 </script>
 

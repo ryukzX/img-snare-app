@@ -20,19 +20,17 @@ export default (await import("vue")).defineComponent({
 </script>
 
 <template>
-  <div id="name-field">
-    <div class="field">
-      <fa icon="fa-user" style="margin-right: 10px"></fa>
-      <input
-        type="text"
-        placeholder="Username"
-        autocomplete="off"
-        v-model="input"
-        @keyup="validateInput"
-        @blur="validateInput"
-        @input="$emit('update:modelValue', $event.target.value)"
-      />
-    </div>
+  <div id="form-field">
+    <fa icon="fa-user" style="margin-right: 10px"></fa>
+    <input
+      type="text"
+      placeholder="Username"
+      autocomplete="off"
+      v-model="input"
+      @keyup="validateInput"
+      @blur="validateInput"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
     <div class="error" v-if="errors.Username">
       {{ errors.Username }}
     </div>
@@ -40,15 +38,5 @@ export default (await import("vue")).defineComponent({
 </template>
 
 <style scope>
-#name-field input {
-  padding: 5px 0;
-  margin: 10px 0;
-  text-indent: 10px;
-  width: 250px;
-  box-shadow: 0 0 3px var(--shadow-color);
-}
-
-.error {
-  font-size: 10px;
-}
+@import "./FormField.scss";
 </style>
